@@ -40,7 +40,7 @@ def recommend_employees(model, input_data, data):
     return top_employees
 
 # Streamlit App
-st.title("Employee Recommendation System")
+st.title("Demand To Talent")
 
 # Load and train model
 model, data, label_encoders = load_and_train_model()
@@ -65,7 +65,7 @@ for idx, column in enumerate(columns):
 if st.button("Get Suitable Employees"):
     try:
         recommendations = recommend_employees(model, user_input, data)
-        st.subheader("Top 3 Recommended Employees:")
+        st.subheader("Top 3 Employees:")
         for i, employee in enumerate(recommendations, 1):
             st.write(f"{i}. Employee ID: {employee}")
     except Exception as e:
